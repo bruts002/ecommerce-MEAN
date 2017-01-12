@@ -1,0 +1,25 @@
+<form class="well" (submit)="addProduct($event)">
+    <div class="form-group">
+        <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Title"/>
+        <input type="text" [(ngModel)]="brand" name="brand" class="form-control" placeholder="Brand"/>
+        <input type="text" [(ngModel)]="cat" name="cat" class="form-control" placeholder="Category"/>
+        <input type="text" [(ngModel)]="description" name="description" class="form-control" placeholder="Description"/>
+        <input type="text" [(ngModel)]="image" name="image" class="form-control" placeholder="Image"/>
+        <input type="text" [(ngModel)]="keywords" name="keywords" class="form-control" placeholder="Keywords"/>
+        <input type="text" [(ngModel)]="price" name="price" class="form-control" placeholder="Price"/>
+    </div>
+</form>
+
+<div class="product-list">
+    <div *ngFor="let product of products">
+        <div class="col-md-3">{{product.title}}</div>
+        <div class="col-md-2">{{product.brand}}</div>
+        <div class="col-md-2">{{product.cat}}</div>
+        <div class="col-md-2">{{product.keywords}}</div>
+        <div class="col-md-2">{{product.price}}</div>
+        <div class="col-md-1">
+            <input type="button" (click)="deleteProduct(product.id)" value="X" class="btn btn-danger"/>
+        </div>
+        <hr/><br/>
+    </div>
+</div>
